@@ -1,0 +1,20 @@
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div>
+    <h2>Renting Costs</h2>
+    <p>Optional Configuration</p>
+  </div>
+
+  <p-card>
+    <div class="gap-4 flex flex-col">
+      <label for="">Yearly Rent Increase</label>
+      <input type="text" pInputText class="" />
+      <label for="">Investment Return</label>
+      <input type="text" pInputText class="" />
+    </div>
+    <p-divider></p-divider>
+    <div class="flex flex-row justify-end gap-4">
+      <p-button severity="secondary">Clear</p-button>
+      <p-button [outlined]="true" severity="primary">Apply</p-button>
+    </div>
+  </p-card>
+</div>

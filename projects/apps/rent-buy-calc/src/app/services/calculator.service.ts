@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { CalculatorInput, CalculatorResult } from '../models/calculator.model';
-
-
+import {
+  CalculatorResult,
+  InputState,
+} from '../models/calculator.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CalculatorService {
-
-
-
-  buyRentCalculator(args: CalculatorInput): CalculatorResult {
+  buyRentCalculator(
+    args: InputState
+  ): CalculatorResult {
     const {
       homePrice,
       downPaymentRate,
@@ -54,7 +54,8 @@ export class CalculatorService {
     }
 
     // Adjust for opportunity cost (investment returns on saved money)
-    const investmentReturn = downPayment * Math.pow(1 + investmentReturnRate, years);
+    const investmentReturn =
+      downPayment * Math.pow(1 + investmentReturnRate, years);
     totalRentingCost -= investmentReturn;
 
     // Determine the recommendation

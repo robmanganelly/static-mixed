@@ -1,41 +1,33 @@
 <div class="px-4 container mx-auto py-12 space-y-12">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div>
-      <h2>foo</h2>
-      <p>bar bar bar</p>
-    </div>
+  <app-owning-costs></app-owning-costs>
 
-    <p-card>
-      <div class="space-y-4">
+  <!-- renting section  -->
+
+  <app-rent-costs></app-rent-costs>
+
+  <br />
+  <p-card header="Expenses over time">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+      <div class="flex flex-col my-4 gap-4">
+        <label for="">Home Price</label>
         <input type="text" pInputText class="" />
-        <input type="text" pInputText class="" />
-        <input type="text" pInputText class="" />
+        <p-slider class="w-full" />
       </div>
-      <p-divider></p-divider>
-    </p-card>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="flex flex-col my-4 gap-4">
-      <input type="text" pInputText class="" />
-      <p-slider class="w-full" />
+      <div class="flex flex-col my-4 gap-4">
+        <label for="">Down Payment %</label>
+        <input type="text" pInputText class="" />
+        <p-slider class="w-full" />
+      </div>
+      <div class="flex flex-col my-4 gap-4">
+        <label for="">Rent Price</label>
+        <input type="text" pInputText class="" />
+        <p-slider class="w-full" />
+      </div>
+      <div class="flex flex-col my-4 gap-4">
+        <label for="">Years</label>
+        <input type="text" pInputText class="" />
+        <p-slider class="w-full" />
+      </div>
     </div>
-    <div class="flex flex-col my-4 gap-4">
-      <input type="text" pInputText class="" />
-      <p-slider class="w-full" />
-    </div>
-    <div class="flex flex-col my-4 gap-4">
-      <input type="text" pInputText class="" />
-      <p-slider class="w-full" />
-    </div>
-    <div class="flex flex-col my-4 gap-4">
-      <input type="text" pInputText class="" />
-      <p-slider class="w-full" />
-    </div>
-  </div>
+  </p-card>
 </div>
-
-inputd: CalculatorInput = homePrice: 300000, downPaymentRate: 0.2, mortgageRate:
-0.05, propertyTaxRate: 0.012, annualMaintenance: 2000, appreciationRate: 0.03,
-monthlyRent: 1500, rentIncreaseRate: 0.02, investmentReturnRate: 0.06, years:
-10,
