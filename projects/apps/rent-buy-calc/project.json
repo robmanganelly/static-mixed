@@ -1,28 +1,28 @@
 {
   "name": "rent-buy-calc",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/rent-buy-calc/src",
+  "sourceRoot": "projects/apps/rent-buy-calc/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/rent-buy-calc",
-        "index": "apps/rent-buy-calc/src/index.html",
-        "browser": "apps/rent-buy-calc/src/main.ts",
+        "outputPath": "dist/projects/apps/rent-buy-calc",
+        "index": "projects/apps/rent-buy-calc/src/index.html",
+        "browser": "projects/apps/rent-buy-calc/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/rent-buy-calc/tsconfig.app.json",
+        "tsConfig": "projects/apps/rent-buy-calc/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/rent-buy-calc/public"
+            "input": "projects/apps/rent-buy-calc/public"
           }
         ],
-        "styles": ["apps/rent-buy-calc/src/styles.scss"],
+        "styles": ["projects/apps/rent-buy-calc/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -74,7 +74,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/rent-buy-calc/jest.config.ts"
+        "jestConfig": "projects/apps/rent-buy-calc/jest.config.ts"
       }
     },
     "serve-static": {
@@ -82,7 +82,7 @@
       "options": {
         "buildTarget": "rent-buy-calc:build",
         "port": 4200,
-        "staticFilePath": "dist/apps/rent-buy-calc/browser",
+        "staticFilePath": "dist/projects/apps/rent-buy-calc/browser",
         "spa": true
       }
     }

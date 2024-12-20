@@ -1,8 +1,8 @@
 export default {
   displayName: 'rent-buy-calc',
-  preset: '../../jest.preset.js',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/rent-buy-calc',
+  coverageDirectory: '../../../coverage/projects/apps/rent-buy-calc',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
