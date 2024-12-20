@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { CalculatorComponent } from './components/calculator.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @Component({
-  imports: [CalculatorComponent],
+  imports: [CalculatorComponent, ToolbarComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
