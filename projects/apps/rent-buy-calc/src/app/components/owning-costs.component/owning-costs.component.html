@@ -5,34 +5,41 @@
   </div>
 
   <p-card>
-    <form [formGroup]="homeOwnerForm" class="gap-4 flex flex-col">
+    <form
+    (ngSubmit)="submit()"
+    [formGroup]="homeOwnerForm" class="gap-4 flex flex-col">
       <label for="annualMaintenance">Annual Maintenance</label>
-      <input
-        id="annualMaintenance"
+      <p-inputnumber
+        mode="currency"
+        currency="USD"
+        inputId="annualMaintenance"
         formControlName="annualMaintenance"
         type="text"
         pInputText
         class=""
       />
       <label for="propertyTaxRate">Property Tax Rate</label>
-      <input
-        id="propertyTaxRate"
+      <p-inputnumber
+        suffix="%"
+        inputId="propertyTaxRate"
         formControlName="propertyTaxRate"
         type="text"
         pInputText
         class=""
       />
       <label for="appreciationRate">Appreciation Rate</label>
-      <input
-        id="appreciationRate"
+      <p-inputnumber
+        suffix="%"
+        inputId="appreciationRate"
         formControlName="appreciationRate"
         type="text"
         pInputText
         class=""
       />
       <label for="mortgageRate">Mortgage Rate</label>
-      <input
-        id="mortgageRate"
+      <p-inputnumber
+        suffix="%"
+        inputId="mortgageRate"
         formControlName="mortgageRate"
         type="text"
         pInputText
@@ -41,8 +48,8 @@
     </form>
     <p-divider></p-divider>
     <div class="flex flex-row justify-end gap-4">
-      <p-button severity="secondary">Clear</p-button>
-      <p-button [outlined]="true" severity="primary">Apply</p-button>
+      <p-button [disabled]="homeOwnerForm.untouched" (onClick)="homeOwnerForm.reset()" severity="secondary">Clear</p-button>
+      <p-button type="submit" [outlined]="true" severity="primary">Apply</p-button>
     </div>
   </p-card>
 </div>

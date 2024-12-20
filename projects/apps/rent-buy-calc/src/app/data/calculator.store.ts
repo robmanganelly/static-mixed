@@ -1,5 +1,11 @@
-import { signalStore, withProps, withState } from '@ngrx/signals';
-import { InputState } from '../models/calculator.model';
+import {
+  patchState,
+  signalStore,
+  withMethods,
+  withProps,
+  withState,
+} from '@ngrx/signals';
+import { HomeOwningInputs, InputState } from '../models/calculator.model';
 import { inject } from '@angular/core';
 import { CalculatorService } from '../services/calculator.service';
 
@@ -17,10 +23,14 @@ const initialState: InputState = {
 };
 
 export const calculatorStore = signalStore(
-  {providedIn: 'root'},
+  { providedIn: 'root' },
   withState(initialState),
   withProps(() => ({
     service: inject(CalculatorService),
   })),
-
+  withMethods((store) => ({
+    updateOwningCosts(payload: Partial<HomeOwningInputs>) {
+      patchState(store, payload);
+    },
+  }))
 );

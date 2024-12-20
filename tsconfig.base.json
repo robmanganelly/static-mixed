@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@oc/ui-theme-utils": ["projects/libs/ui-theme-utils/src/index.ts"]
+      "@oc/ui-theme-utils": ["projects/libs/ui-theme-utils/src/index.ts"],
+      "@oc/ui-utils": ["projects/libs/ui-utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
