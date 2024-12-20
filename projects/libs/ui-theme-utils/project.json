@@ -1,0 +1,36 @@
+{
+  "name": "ui-theme-utils",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "projects/libs/ui-theme-utils/src",
+  "prefix": "oc-theme-utils",
+  "projectType": "library",
+  "tags": ["type:lib", "scope:ui"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "projects/libs/ui-theme-utils/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "projects/libs/ui-theme-utils/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "projects/libs/ui-theme-utils/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "projects/libs/ui-theme-utils/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
