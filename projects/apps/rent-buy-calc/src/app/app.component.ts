@@ -8,5 +8,5 @@ import { CalculatorComponent } from './components/calculator.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'rent-buy-calc';
+  title = 'Rent or Buy';
 }
