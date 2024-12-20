@@ -26,7 +26,7 @@ module.exports = [
         'error',
         {
           type: 'attribute',
-          prefix: 'ocThemeUtils',
+          prefix: 'oc',
           style: 'camelCase',
         },
       ],

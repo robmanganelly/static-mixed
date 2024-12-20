@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@static-mixed/ui-theme-utils": [
+      "@oc/ui-theme-utils": [
         "projects/libs/ui-theme-utils/src/index.ts"
       ]
     }
