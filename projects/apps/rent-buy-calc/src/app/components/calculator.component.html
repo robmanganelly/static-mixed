@@ -1,1 +1,15 @@
-<button ocThemeToggle>toggle</button>
+<p-toolbar>
+  <ng-template #start>
+    <h1>Rent Buy Calculator</h1>
+  </ng-template>
+  <ng-template #center></ng-template>
+  <ng-template #end>
+    <p-button
+      ocThemeToggle
+      [icon]="isDark ? 'pi pi-sun' : 'pi pi-moon'"
+      class="mr-2"
+      text
+      [severity]="isDark ? 'primary' : 'secondary'"
+    />
+  </ng-template>
+</p-toolbar>

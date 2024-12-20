@@ -1,6 +1,7 @@
 import { Directive, HostListener, inject, Renderer2 } from '@angular/core';
 import { DARK_THEME_SELECTOR_CLASS } from '../shared/dark.theme.constant';
 import { DOCUMENT } from '@angular/common';
+import { isDarkTheme } from '../shared/theme.initializer';
 
 @Directive({
   selector: '[ocThemeToggle]',
@@ -13,7 +14,7 @@ export class ThemeToggleDirective {
   #html = this.#document.documentElement;
 
   isDark(): boolean {
-    return this.#html?.classList.contains(DARK_THEME_SELECTOR_CLASS);
+    return isDarkTheme(this.#document);
   }
 
   @HostListener('click', ['$event'])

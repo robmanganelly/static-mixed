@@ -3,6 +3,12 @@ import { Themes, DefaultTheme } from '../models/themes.model';
 import { inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
+
+export function isDarkTheme(doc: Document): boolean {
+  return doc.documentElement.classList.contains(DARK_THEME_SELECTOR_CLASS);
+}
+
+
 /**
  * gets preferred theme based on browser preferences
  * @param doc
