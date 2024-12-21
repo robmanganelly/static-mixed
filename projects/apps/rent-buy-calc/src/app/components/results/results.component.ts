@@ -1,13 +1,16 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  linkedSignal,
+} from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { calculatorStore } from '../../data/calculator.store';
 import { watchState } from '@ngrx/signals';
 
 @Component({
   selector: 'app-results',
-  imports: [
-    ReactiveFormsModule
-],
+  imports: [ReactiveFormsModule],
   templateUrl: './results.component.html',
   styleUrl: './results.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,7 +18,9 @@ import { watchState } from '@ngrx/signals';
 export class ResultsComponent {
   #store = inject(calculatorStore);
 
-  state = '';
+  state = linkedSignal(() => {
+    return '';
+  });
 
-  c = watchState(this.#store, (s) => (this.state = JSON.stringify(s)));
+  c = watchState(this.#store, (s) => this.state.set(JSON.stringify(s)));
 }

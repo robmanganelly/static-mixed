@@ -1,33 +1,19 @@
 <div class="px-4 container mx-auto py-12 space-y-12">
-  <app-owning-costs></app-owning-costs>
+  <div>
+    <app-owning-costs></app-owning-costs>
+  </div>
 
   <!-- renting section  -->
-
-  <app-rent-costs></app-rent-costs>
-
+  <div>
+    <app-rent-costs></app-rent-costs>
+  </div>
   <br />
-  <p-card header="Expenses over time">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
-      <div class="flex flex-col my-4 gap-4">
-        <label for="">Home Price</label>
-        <input type="text" pInputText class="" />
-        <p-slider class="w-full" />
-      </div>
-      <div class="flex flex-col my-4 gap-4">
-        <label for="">Down Payment %</label>
-        <input type="text" pInputText class="" />
-        <p-slider class="w-full" />
-      </div>
-      <div class="flex flex-col my-4 gap-4">
-        <label for="">Rent Price</label>
-        <input type="text" pInputText class="" />
-        <p-slider class="w-full" />
-      </div>
-      <div class="flex flex-col my-4 gap-4">
-        <label for="">Years</label>
-        <input type="text" pInputText class="" />
-        <p-slider class="w-full" />
-      </div>
-    </div>
-  </p-card>
+
+  <div>
+    <app-moving-controls></app-moving-controls>
+  </div>
+
+  <div>
+    <app-results></app-results>
+  </div>
 </div>

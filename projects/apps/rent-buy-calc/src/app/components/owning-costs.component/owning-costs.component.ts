@@ -32,7 +32,7 @@ export class OwningCostsComponent {
       validators: [Validators.min(0.1), Validators.max(3), Validators.required],
     }),
     appreciationRate: this.#nfb.control(this.#store.appreciationRate(), {
-      validators: [Validators.min(-10), Validators.max(10), Validators.required],
+      validators: [Validators.min(0), Validators.max(10), Validators.required],
     }),
     mortgageRate: this.#nfb.control(this.#store.mortgageRate(), {
       validators: [Validators.min(0), Validators.max(10), Validators.required],
@@ -40,8 +40,10 @@ export class OwningCostsComponent {
   });
 
   submit(){
+    console.log('foo')
     if(this.homeOwnerForm.invalid) return;
-    this.#store.updateOwningCosts(this.homeOwnerForm.value)
+    this.#store.updateOwningCosts(this.homeOwnerForm.value);
+    this.homeOwnerForm.markAsPristine()
   }
 }
 

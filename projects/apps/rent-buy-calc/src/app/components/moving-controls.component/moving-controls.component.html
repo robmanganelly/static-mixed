@@ -1,1 +1,113 @@
-<p>moving-controls works!</p>
+<p-card header="Difference over time">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+    <div class="flex flex-col my-4 gap-4">
+      <label for="">Home Price</label>
+      <p-inputnumber
+        [min]="values.homePrice.min"
+        [max]="values.homePrice.max"
+        [showButtons]="true"
+        buttonLayout="horizontal"
+        mode="currency"
+        currency="USD"
+        inputId="homePrice"
+        [ngModel]="homePrice()"
+        (ngModelChange)="sethomePrice($event)"
+        [step]="1000"
+        pInputText
+        ><ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span> </ng-template
+      ></p-inputnumber>
+      <p-slider
+        (ngModelChange)="sethomePrice($event)"
+        [min]="values.homePrice.min"
+        [max]="values.homePrice.max"
+        [ngModel]="homePrice()"
+        class="w-full"
+      />
+    </div>
+    <div class="flex flex-col my-4 gap-4">
+      <label for="">Down Payment %</label>
+      <p-inputnumber
+        [min]="values.downPaymentRate.min"
+        [max]="values.downPaymentRate.max"
+        [showButtons]="true"
+        buttonLayout="horizontal"
+        suffix="%"
+        [step]="1"
+        inputId="downPaymentRate"
+        [ngModel]="downPaymentRate()"
+        (ngModelChange)="setdownPaymentRate($event)"
+        pInputText
+        ><ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span> </ng-template
+      ></p-inputnumber>
+      <p-slider
+        (ngModelChange)="setdownPaymentRate($event)"
+        [min]="values.downPaymentRate.min"
+        [max]="values.downPaymentRate.max"
+        [ngModel]="downPaymentRate()"
+        class="w-full"
+      />
+    </div>
+    <div class="flex flex-col my-4 gap-4">
+      <label for="">Rent Price</label>
+      <p-inputnumber
+        [min]="values.monthlyRent.min"
+        [max]="values.monthlyRent.max"
+        [showButtons]="true"
+        buttonLayout="horizontal"
+        mode="currency"
+        currency="USD"
+        inputId="monthlyRent"
+        [ngModel]="monthlyRent()"
+        (ngModelChange)="setmonthlyRent($event)"
+        [step]="50"
+        pInputText
+        ><ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span> </ng-template
+      ></p-inputnumber>
+      <p-slider
+        (ngModelChange)="setmonthlyRent($event)"
+        [min]="values.monthlyRent.min"
+        [max]="values.monthlyRent.max"
+        [ngModel]="monthlyRent()"
+        class="w-full"
+      />
+    </div>
+    <div class="flex flex-col my-4 gap-4">
+      <label for="">Years</label>
+      <p-inputnumber
+        [min]="values.years.min"
+        [max]="values.years.max"
+        [showButtons]="true"
+        buttonLayout="horizontal"
+        inputId="years"
+        [ngModel]="years()"
+        (ngModelChange)="setyears($event)"
+        [step]="1"
+        pInputText
+        ><ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span> </ng-template
+      ></p-inputnumber>
+      <p-slider
+        (ngModelChange)="setyears($event)"
+        [min]="values.years.min"
+        [max]="values.years.max"
+        [ngModel]="years()"
+        class="w-full"
+      />
+    </div>
+  </div>
+</p-card>

@@ -5,7 +5,12 @@ import {
   withProps,
   withState,
 } from '@ngrx/signals';
-import { HomeOwningInputs, InputState } from '../models/calculator.model';
+import {
+  HomeOwningInputs,
+  InputState,
+  MovingDataPointsInputs,
+  RentInputs,
+} from '../models/calculator.model';
 import { inject } from '@angular/core';
 import { CalculatorService } from '../services/calculator.service';
 
@@ -30,7 +35,16 @@ export const calculatorStore = signalStore(
   })),
   withMethods((store) => ({
     updateOwningCosts(payload: Partial<HomeOwningInputs>) {
+      console.log('updateOwningCosts', payload);
       patchState(store, payload);
+    },
+    updateRentCosts(payload: Partial<RentInputs>) {
+      console.log('updateRentCosts', payload);
+      patchState(store, payload);
+    },
+    patchLive(state: Partial<MovingDataPointsInputs>) {
+      console.log('patchLive', state);
+      patchState(store, state);
     },
   }))
 );

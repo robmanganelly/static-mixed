@@ -6,50 +6,86 @@
 
   <p-card>
     <form
-    (ngSubmit)="submit()"
-    [formGroup]="homeOwnerForm" class="gap-4 flex flex-col">
+      (ngSubmit)="submit()"
+      [formGroup]="homeOwnerForm"
+      class="gap-4 flex flex-col"
+    >
       <label for="annualMaintenance">Annual Maintenance</label>
       <p-inputnumber
+        [showButtons]="true"
+        buttonLayout="horizontal"
         mode="currency"
         currency="USD"
         inputId="annualMaintenance"
         formControlName="annualMaintenance"
-        type="text"
+
         pInputText
         class=""
-      />
+        ><ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span> </ng-template
+      ></p-inputnumber>
       <label for="propertyTaxRate">Property Tax Rate</label>
       <p-inputnumber
+        [showButtons]="true"
+        buttonLayout="horizontal"
         suffix="%"
         inputId="propertyTaxRate"
         formControlName="propertyTaxRate"
-        type="text"
+
         pInputText
         class=""
-      />
+        ><ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span> </ng-template
+      ></p-inputnumber>
       <label for="appreciationRate">Appreciation Rate</label>
       <p-inputnumber
+        [showButtons]="true"
+        buttonLayout="horizontal"
         suffix="%"
         inputId="appreciationRate"
         formControlName="appreciationRate"
-        type="text"
+
         pInputText
-        class=""
-      />
+        ><ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span> </ng-template
+      ></p-inputnumber>
       <label for="mortgageRate">Mortgage Rate</label>
       <p-inputnumber
+        [showButtons]="true"
+        buttonLayout="horizontal"
         suffix="%"
         inputId="mortgageRate"
         formControlName="mortgageRate"
-        type="text"
+
         pInputText
-        class=""
-      />
+        ><ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span> </ng-template
+      ></p-inputnumber>
     </form>
     <p-divider></p-divider>
     <div class="flex flex-row justify-end gap-4">
-      <p-button [disabled]="homeOwnerForm.untouched" (onClick)="homeOwnerForm.reset()" severity="secondary">Clear</p-button>
-      <p-button type="submit" [outlined]="true" severity="primary">Apply</p-button>
+      <p-button (onClick)="homeOwnerForm.reset()" severity="secondary"
+        >Clear</p-button
+      >
+      <p-button
+        (onClick)="this.submit()"
+        [disabled]="homeOwnerForm.pristine || homeOwnerForm.invalid"
+        [outlined]="true"
+        severity="primary"
+        >Apply</p-button
+      >
     </div>
   </p-card>
 </div>

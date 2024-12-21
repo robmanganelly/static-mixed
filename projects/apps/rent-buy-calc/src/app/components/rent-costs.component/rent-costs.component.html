@@ -5,16 +5,50 @@
   </div>
 
   <p-card>
-    <div class="gap-4 flex flex-col">
+    <form
+      (ngSubmit)="submit()"
+      [formGroup]="rentCostsForm"
+      class="gap-4 flex flex-col"
+    >
       <label for="">Yearly Rent Increase</label>
-      <input type="text" pInputText class="" />
+      <p-inputnumber
+        [showButtons]="true"
+        buttonLayout="horizontal"
+        suffix="%"
+        inputId="rentIncreaseRate"
+        formControlName="rentIncreaseRate"
+
+        pInputText
+        ><ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span> </ng-template
+      ></p-inputnumber>
       <label for="">Investment Return</label>
-      <input type="text" pInputText class="" />
-    </div>
+      <p-inputnumber
+        [showButtons]="true"
+        buttonLayout="horizontal"
+        suffix="%"
+        inputId="investmentReturnRate"
+        formControlName="investmentReturnRate"
+
+        pInputText
+        ><ng-template #incrementbuttonicon>
+          <span class="pi pi-plus"></span>
+        </ng-template>
+        <ng-template #decrementbuttonicon>
+          <span class="pi pi-minus"></span> </ng-template
+      ></p-inputnumber>
+    </form>
     <p-divider></p-divider>
     <div class="flex flex-row justify-end gap-4">
-      <p-button severity="secondary">Clear</p-button>
-      <p-button [outlined]="true" severity="primary">Apply</p-button>
+      <p-button (onClick)="rentCostsForm.reset()" severity="secondary"
+        >Clear</p-button
+      >
+      <p-button [disabled]="rentCostsForm.invalid || rentCostsForm.pristine" (onClick)="submit()" [outlined]="true" severity="primary"
+        >Apply</p-button
+      >
     </div>
   </p-card>
 </div>
